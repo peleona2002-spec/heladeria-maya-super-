@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería y Frutería Arcoíris</title>
+    <meta name="description"
+        content="Sabor, color y frescura en cada bocado. Disfruta de los mejores helados y frutas en Tocaima.">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Cart Widget -->
+    <div id="cart-widget" class="cart-widget minimized">
+        <div class="cart-header" id="cart-header">
+            <h3><i class="fa-solid fa-cart-shopping"></i> Mi Pedido</h3>
+            <span id="cart-count" class="cart-count">0</span>
+            <button id="toggle-cart" class="toggle-cart-btn"><i class="fa-solid fa-chevron-up"></i></button>
+        </div>
+        <div class="cart-body" id="cart-body">
+            <ul id="carrito" class="cart-list">
+                <li class="empty-cart">El carrito está vacío</li>
+            </ul>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$<span id="total">0</span></span>
+            </div>
+            <a href="https://wa.me/573134292831" target="_blank" class="btn btn-primary cart-checkout-btn"
+                id="checkout-btn">
+                <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+            </a>
+        </div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fa-solid fa-rainbow logo-icon"></i>
+                <div class="logo-text">
+                    <h1>Arcoíris</h1>
+                    <span>Heladería y Frutería</span>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                    <li><a href="#equipo-de-trabajo">Equipo de trabajo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Inicio Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2 class="slogan">Sabor, color y frescura en cada bocado con la heladeria maya</h2>
+                <p class="welcome-text">Descubre la magia de lo natural con nuestros deliciosos helados y frutas frescas
+                    de la mejor calidad. ¡Te esperamos en Tocaima para endulzar tu día!</p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn btn-primary"><i class="fa-solid fa-ice-cream"></i> Ver Menú</a>
+                    <a href="#ubicacion" class="btn btn-secondary"><i class="fa-solid fa-location-dot"></i>
+                        Visítanos</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="blob-shape"></div>
+                <div class="contenedor">
+                    <div class="circulo">
+                        <img id="foto"
+                            src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?auto=format&fit=crop&w=600&q=80"
+                            alt="Helados y Frutas">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Section -->
+        <section id="productos" class="products-section">
+            <div class="section-header">
+                <h2>Nuestros Productos</h2>
+                <div class="rainbow-divider"></div>
+                <p class="section-sub">Elige entre nuestras deliciosas ensaladas de frutas frescas o nuestras increíbles
+                    copas de helado artesanales.</p>
+            </div>
+
+            <!-- Filtros de Categorías -->
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i>
+                    Todos</button>
+                <button class="filter-btn" data-filter="ensaladas"><i class="fa-solid fa-apple-whole"></i>
+                    Ensaladas</button>
+                <button class="filter-btn" data-filter="helados"><i class="fa-solid fa-ice-cream"></i>
+                    Heladería</button>
+                <button class="filter-btn" data-filter="bebidas"><i class="fa-solid fa-glass-water"></i>
+                    Bebidas</button>
+                <button class="filter-btn" data-filter="rapida"><i class="fa-solid fa-hamburger"></i> Comida
+                    Rápida</button>
+            </div>
+
+            <h3 class="category-title">Ensaladas de Frutas</h3>
+            <div class="products-grid">
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/632037899_831610743271853_4701709176491465476_n.jpg?stp=dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGgIYvnEFP-e6I2XU8385rpV3ijpDk1MiRXeKOkOTUyJE7USGQBuZlpRDVbvUHxamlQ9wjLGbOWkWY_AA6tCL1p&_nc_ohc=E4yC1N9O-KEQ7kNvwEAo1d5&_nc_oc=AdptM4fj27AnaoWYNtph4Xwm8L--4nP38H1egsJPjqGOfSaI_oUA84yCAhfVOQpULSI&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=VbhwUgOkadu158vc_PYPSQ&_nc_ss=7b2a8&oh=00_AQAOAJ6psu8cROnYC8ZBB_1rrQEzDDlJvDcgxZp9bRXgVA&oe=6A6EFE6A"
+                            alt="ensalada mini">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Mini</h3>
+                        <div class="price-row">
+                            <span class="price">$8.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/625349634_823774387388822_5905718789247120558_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEB-YMTxqVVVfOKfIIKhSTmxeulYH6K8m7F66Vgforybq31-GFbLwBPMVcU-R5FA58M6DfBxsHzHJiAQPHH1b02&_nc_ohc=GqLpWkBovSAQ7kNvwEA2WTf&_nc_oc=AdorDYsTYynsiDR3-JSuHOo7NYmxgqctrECDc4-FIx2cPVVZneGIt_di8Q0tLmKYA1A&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=0WuZkRfmAAnGJhtmYJp9Ww&_nc_ss=7b2a8&oh=00_AQBk1LpvMriCP4oXLnY89LBc30zmP7AwO9mGQcwEKW1XVw&oe=6A6F28A6"
+                            alt="ensalada sencilla">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Sencilla</h3>
+                        <div class="price-row">
+                            <span class="price">$10.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/632315023_832417106524550_586417859462744705_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1536&ctp=s2048x1536&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHrAK-96O3V6J4xhaToy73QkDeK1H9IRrSQN4rUf0hGtLgcLkr7MN0rJ3PNwilTQFOxPRXPWzIJsM2Pxj4Rr_RG&_nc_ohc=y4ArYnbfFIYQ7kNvwG7-olX&_nc_oc=AdrZgeVs9Ke4TKwDKpkt0pATPq-q5ALqs5-ZhYBBxSWxctbAw4Mm3T0mcAyrIm6rkjY&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=Fm25U31iYhDqKhbiF1qMOA&_nc_ss=7b2a8&oh=00_AQCF6p5DwV6eZoStuWYfTJvAwZw64z18mm381_2H9Lh-Qw&oe=6A6F21D4"
+                            alt="ensalada especial">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Especial</h3>
+                        <div class="price-row">
+                            <span class="price">$13.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/471187648_502737559492508_2654164217219427654_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE0JTOjimd-wkRo5QSze0ecbia_T_SwmdduJr9P9LCZ18M252SXcgd5rZvlCLSikiGcXPyJqsturVJH48n4jokg&_nc_ohc=uQsb5CRdXkwQ7kNvwFSF6P-&_nc_oc=AdqhjPlO7ghZqXTaSIntFeSxEKtbnKHLyNbkG3wGxxvofidwh-dZ2D7LU-3UU2PosGY&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=ewabEnePE5KdvchafBZ3jg&_nc_ss=7b2a8&oh=00_AQCnJYjvAnEbrqYOSpbi9XPCXGVX9bEVRySz6VTddw-cWw&oe=6A6F2937"
+                            alt="Ensalada super maya">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Súper Maya</h3>
+                        <div class="price-row">
+                            <span class="price">$15.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/517278196_651008134665449_7442571254359689438_n.jpg?stp=dst-jpg_tt6&cstp=mx2048x1480&ctp=s2048x1480&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHRgVKJyAhWZ67EINhX6g_8AMlun3GAqs8AyW6fcYCqzwbk6ZGtfmL4N3UKj1z7UA8BGal7Ln5-YKCYHgHWYLga&_nc_ohc=NWimqqF_eMYQ7kNvwG0k-ug&_nc_oc=AdrXKdghkqYec9FeLjKK3QCP_sfp1lPh00QM-jNZO4hbUUU5FpotczuQb2A1EOqK-_I&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=vNosQpEH4jGT96i_8s7C3w&_nc_ss=7b2a8&oh=00_AQBOaEgWjuH7a86mwpSmaT_lRtvq3LQ7-GwYU_Q7zFjo3g&oe=6A6F2062"
+                            alt="ensalada maya suprema">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Maya Súper</h3>
+                        <div class="price-row">
+                            <span class="price">$20.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="ensaladas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/480550009_544123382020592_8057064563277980665_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGG4Q3RKBahNUdF-oxfkLU89Cd240zC2yT0J3bjTMLbJNFqOe5YGU1QKv_xRUmrHzg-yMMljCt02rwJIzxJP9Sq&_nc_ohc=EiqVK48HCdYQ7kNvwFuM_Ye&_nc_oc=AdpCPFxrAIJG5ZpE8wQiM7hQtp7NcoIr29DmDK7lhwznK5PEfH_rHFM3cyGcmah3yTI&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=6j59JK-ujzxrniy1Nlk1mQ&_nc_ss=7b2a8&oh=00_AQDQKaV3mlTPrwuIiIqvLhqACuOmVnNEL0--oY8IkxVM3Q&oe=6A6F244A"
+                            alt="ensalada full fruta">
+                        <span class="category-badge frutas-badge">Frutería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Ensalada Full Fruta</h3>
+                        <div class="price-row">
+                            <span class="price">$10.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title">Preparaciones con Helado</h3>
+            <div class="products-grid">
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/624650457_823773960722198_3814101146777248470_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGYt1Na4FkQ3XbNACnQWqeSlgYbPJXqK9WWBhs8leor1SdhsKIfUmN_kCTRZYI1PBCZrRP8dHpJ4dMtmUmfpqDl&_nc_ohc=FJTzIxdfdFMQ7kNvwEKnriV&_nc_oc=AdqzEZrva5sCycL5GX_2R3CC724Y-OFrcJj5Rf8HEjPfw7GhndL6yY9t1CiCl5Ia_Vg&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=bngV5N8lhVfQ0jsMQ2xgBg&_nc_ss=7b2a8&oh=00_AQBpxCUphKbOS0w-HdotsNXDBjts6SuRGewbTvdUGi0CLg&oe=6A6F1178"
+                            alt="banana split">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Banana Split</h3>
+                        <div class="price-row">
+                            <span class="price">$14.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/481980933_558470813919182_5732051592990212972_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx720x960&ctp=s720x960&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHwMVkjRLDSsFFyrtwyQl2LfXz3BzZ0vtx9fPcHNnS-3O_Tv0dD-ZQdptTaVWeUGrM5WRVCPqctlw8WIrJYpRMN&_nc_ohc=bag_kMesxk0Q7kNvwGVExr8&_nc_oc=AdoA4kX_b7OgGeW1fu3bc4zXPcx-YR0lNECWho6pv5JhB9hnPp2IPP9poVzxDFr9-xE&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=dpb-rRKxHkpAlxTQOzvh3Q&_nc_ss=7b2a8&oh=00_AQCvpuz9eZYel9EnfU61aIESssPb7OQl1WllLsmzjfLi1g&oe=6A6F1EA6"
+                            alt="banana split super">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Banana Split Súper</h3>
+                        <div class="price-row">
+                            <span class="price">$17.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/480753834_543001622132768_7187949821314093040_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE1-1RNcPQlKNQrLxHKAvllBX8z-Jya3qMFfzP4nJreowrTqT4w-h04sk190OakYBmGRvF3oSzCf6AV5dK0fyGe&_nc_ohc=dtQDWV8UfUUQ7kNvwHi7xS0&_nc_oc=AdorL5xBhwXnpg_V3w3hvjOBsgDaSKvffCYvrcTxUutTJCXxhlwOfEdbpAJQsf5AaHY&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=7W1cmTK14AfB3M3Vqji1SQ&_nc_ss=7b2a8&oh=00_AQDaCFhjVXEwGfEqx4M2L5_AfOu4jvNSPP1dZ64bOcB2wA&oe=6A6EFDD1"
+                            alt="brownie con helado">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Brownie con Helado</h3>
+                        <div class="price-row">
+                            <span class="price">$13.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/480514109_542261902206740_7437838478410841130_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx960x1280&ctp=s960x1280&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG5R4Q6EN4WDhvtwAvgySRh_6acp_-Cv4b_ppyn_4K_htP-VxngmafjVl81fc5EtueqaKwpdI2PW0uUEg16zaJw&_nc_ohc=IqIlRx-5V40Q7kNvwGOcYql&_nc_oc=Adpctp9U_BJurxZdC4RDkZ_JXoyA_ZDpJPD8yVKbGyh8QspIaNNo1iSf_6cMYOrwj_M&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=97_Zymp0CwaeoRm-72SbpA&_nc_ss=7b2a8&oh=00_AQAcFdGXaPUY50rdrN9EmhP8Ul1Z4--z9GkyoTR4iBjrAQ&oe=6A6F10DC"
+                            alt="copa de helado con fruta">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Copa de Helado con Fruta</h3>
+                        <div class="price-row">
+                            <span class="price">$15.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/480630804_543001662132764_4926728454286101641_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1200x1600&ctp=s1200x1600&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF2Mka_dnBgQXlo1Jnb807WJGfvZRAJUa8kZ-9lEAlRrzsCpXaC4tsKVzGsqVj84DdaIynQGDHvyLTna2vbA7qg&_nc_ohc=-tPO4p_RcpYQ7kNvwELJqFg&_nc_oc=Adq6uPWoB5w3cixk3a0DzjvuJvfUzR5x0cFbjwnhv3mwrYVbByDwXEXK-U7t-0D1wCM&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=Ouc9nglPPRR_srfcpz4leA&_nc_ss=7b2a8&oh=00_AQB3Rjheg_j7qsvYzcL9-R6cYD3SvyiyUy136VtNKossRw&oe=6A6F1B56"
+                            alt="copa de helado de durazno">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Copa de Helado de Durazno</h3>
+                        <div class="price-row">
+                            <span class="price">$15.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/477713405_538759802556950_4814488734058370350_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1204x1600&ctp=s1204x1600&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEdTuFZgY_2pZJkLqeOmnbp9AQHBf0rJA_0BAcF_SskD1JyJLsoSj86jiRtsvQNm4KMYuKtLK5F167ZCLQsTjHn&_nc_ohc=LoOPeKTYnwEQ7kNvwGQX3-H&_nc_oc=AdobH3CvWAdiw4_D8MgESENDyfSatXeA8RF0ZaXiAfxoPlZhdlbKk8eRx9l2ex2Yuts&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=A_8v7BGLiwSjO_OmURkR_Q&_nc_ss=7b2a8&oh=00_AQA7VKx30uyx_dAcn1HY3EbWXgNBrZyzoSBxem-Nh3lbnw&oe=6A6F26DC"
+                            alt="fresas con crema clasicas">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Fresas con Crema Clásicas</h3>
+                        <div class="price-row">
+                            <span class="price">$10.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475376012_529699430129654_6746521118453092985_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF5u9wHO8YMBkDB9AQQhVb_pG8x48wy41ikbzHjzDLjWMrb-3cUUZ65ZB8A0N9SJo4oWdc34ACcCnJoQvSjTKTJ&_nc_ohc=yLQXXbicK_AQ7kNvwE60jOB&_nc_oc=Adp3gZPloQcITmbV1gAtFA0O8Ovbr9_5LyiFbc2jxot9DLWwjyljBCRhXc4q713SmmM&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=84M-mGqKQW9GCuE7fBL67Q&_nc_ss=7b2a8&oh=00_AQC96KBuNSG8hrlXzWoj0TQP97aSSEhnAoBmq-Zy60rnGQ&oe=6A6F0694"
+                            alt="fresas con crema y helado">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Fresas con Crema y Helado</h3>
+                        <div class="price-row">
+                            <span class="price">$13.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475462152_527718650327732_7744615429825048625_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEenOZh_qKALuNx-C2c-tgYjOhs-ZXAZ6qM6Gz5lcBnqtwVr9wMAz8DUE-Oe4VoBBsWPtBc9C7pSojQ0xqiVYuJ&_nc_ohc=c8ZTM1NjEIEQ7kNvwE95wiL&_nc_oc=AdphEMu4V0yQ1wMo6mq-7ziD4dpA65UKf0iSZEHE8nmr5yKMrGAb6gFYwxYv-FLz4FA&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=jWzZQtEMMVt7ZVuyzU1e6w&_nc_ss=7b2a8&oh=00_AQAxhU0fFcRFtHWR6rXq-IyowdduRRJ9Y_zsAc9UmL4G1Q&oe=6A6F0B6C"
+                            alt="fresas con crema especiales">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Fresas con Crema Especiales</h3>
+                        <div class="price-row">
+                            <span class="price">$16.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="helados">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475691793_528984966867767_6352485347481067852_n.jpg?stp=dst-jpg_tt6&cstp=mx1204x1600&ctp=s1204x1600&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG9edKt4Boarq752Dx-SunW-EH54k2Xc7T4QfniTZdztOGm1zBC671VDjyOqy92Uv0spIgYmeGnkZcPGW8YYfbV&_nc_ohc=IVQ6uNJ7d98Q7kNvwGJ42Xs&_nc_oc=AdqMod2eHo1hVERho9cG43dHEVC4Xg-1-NTlNmp3VLRRdh0enEKUKQcMuLfIxwPg4mY&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=GJ8SvLxJSkKWlvegUSbvEg&_nc_ss=7b2a8&oh=00_AQAQarKOW11YHfaFYt6tvvL5msWdtdaMLviBReJ-KWJuUA&oe=6A6F2E0D"
+                            alt="cono doble">
+                        <span class="category-badge helados-badge">Heladería</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Cono Doble</h3>
+                        <div class="price-row">
+                            <span class="price">$8.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title">Comida Rápida</h3>
+            <div class="products-grid">
+                <div class="product-card" data-category="rapida">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475133088_527717593661171_4376717605443565713_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG5WBDYAGLkv2xJ3ei6bwBYWcK5valBVZRZwrm9qUFVlBzn7cWh71Vs0Dtsr4z9WCLgusVEAOzbYWldLcMIvivl&_nc_ohc=QCTpXlbAoxcQ7kNvwHbyNSO&_nc_oc=Adp0mrVLha4k0rNV_1IgMSaUuqqKyZcX2mtmzGMKTgrceaozypnqd54MqNbRHgAMeZ8&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=6kRSqLQA1eTpKbvKaMisnQ&_nc_ss=7b2a8&oh=00_AQAfmNQ4deSOOc32RZfNYHnH1wNUAz5nM6EvyjDgbZktxA&oe=6A6F1AA1"
+                            alt="hamburguesa especial">
+                        <span class="category-badge rapida-badge">Comida Rápida</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Hamburguesa Especial</h3>
+                        <div class="price-row">
+                            <span class="price">$15.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="rapida">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475069935_527694903663440_1278739602925668828_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1434&ctp=s1080x1434&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEgraifEw6_h4rN9a9i4ID-RwloLhVD5k1HCWguFUPmTQZjODi3i5VrfycR1nNsUnnz2D87SXg9MOvcaMoeOtMm&_nc_ohc=4nF79b-EulgQ7kNvwETSWhj&_nc_oc=AdongorpovgHw9KU6Cy0fbHKP5w5sFU6iw_a0MlgAh2vXtHxx2MD0gbOv-EY5B5xnpc&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=p1UameLjatWgtUsxbtbaIg&_nc_ss=7b2a8&oh=00_AQCfSiShg-iiw3Uv_kdS7lk8lXYNntd7kkWx7NsD0cQasw&oe=6A6F2373"
+                            alt="hamburguesa sencilla">
+                        <span class="category-badge rapida-badge">Comida Rápida</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Hamburguesa Sencilla</h3>
+                        <div class="price-row">
+                            <span class="price">$10.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="category-title">Bebidas y Jugos</h3>
+            <div class="products-grid">
+                <div class="product-card" data-category="bebidas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/627195943_823774330722161_3269765109055479060_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeELRdQXnqISBrBWbeOZaeI_kAjaCFLQBa6QCNoIUtAFrmRLq17H7UEz2VGmfRbu9EcQJI7jPT7jjpNyuUEaPvYO&_nc_ohc=L0MeMUdsIh4Q7kNvwEcrc4x&_nc_oc=AdqSR4ncFVMcNT_F8QE7bL5DPAdgn_45WsXFZhSU8uoXonNUu3LX4WSB811wtk8nn0g&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=msJgpu2O--0hSJT2Kk4pvA&_nc_ss=7b2a8&oh=00_AQBa_nbzTs1tkECgh-rxdXSmt7tPqspqemB9KufIhA3z9A&oe=6A6F1CA9"
+                            alt="granizado">
+                        <span class="category-badge jugos-badge">Bebidas</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Granizado</h3>
+                        <div class="price-row">
+                            <span class="price">$8.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bebidas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/625360869_823774254055502_418103700230910914_n.jpg?stp=dst-jpg_tt6&cstp=mx1536x2048&ctp=s1536x2048&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH9J_84XvLr0R4xMxuI_Q-8eKk1ayOrqad4qTVrI6upp9olRUEVv-8hM1jeJBxq2mzBIR-d9M51n6v1iZcXW80g&_nc_ohc=Cp7J1pd_x-cQ7kNvwFdnCVl&_nc_oc=AdoHogKtRJriDchpKmpHNq-kIrvWTG1XOGD0xQWSrOKQfLHkhwwgAsHG9KzgKpr4mrI&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=oLogb-wo39B61Ay4Y_SyAQ&_nc_ss=7b2a8&oh=00_AQC2sOKtXsPzbLVJuTKu0CI6_TEkLPFh2tdYa5MW7T_BFg&oe=6A6F05FE"
+                            alt="michelada">
+                        <span class="category-badge jugos-badge">Bebidas</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Michelada</h3>
+                        <div class="price-row">
+                            <span class="price">$10.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bebidas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/484031877_558469800585950_1451287264478880705_n.jpg?stp=dst-jpg_tt6&cstp=mx960x860&ctp=s960x860&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFQB3JzMGlZx5h-xRoPBMwQ6IrPVwQ4E3jois9XBDgTeHtbl1bm2owIlkPVtU6Ic18YzTB7g2CldGpR1A_II-zv&_nc_ohc=03DYHOaq8CgQ7kNvwHwd9xx&_nc_oc=Adr2dnnuiuW_AtNRyECW3GD4-9cqwRZV9PsEyXTI_UwQ3beW01hHtCTC_TlFKI14dRY&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=pIhxceFj5XSEZxx5oVxJVg&_nc_ss=7b2a8&oh=00_AQBwzLYVyRaRcewoSGMHjDSd1J7UOcgur_x9Lmo68NpbNA&oe=6A6F361A"
+                            alt="Jugo Natural en Leche">
+                        <span class="category-badge jugos-badge">Bebidas</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Jugo Natural en Leche</h3>
+                        <div class="price-row">
+                            <span class="price">$7.000</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="bebidas">
+                    <div class="card-image">
+                        <img src="https://scontent.fclo14-1.fna.fbcdn.net/v/t39.30808-6/475308658_528985086867755_4224161395704429985_n.jpg?stp=dst-jpg_tt6&cstp=mx1204x1600&ctp=s1204x1600&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEgi4u5nSH9nAc73KhC7CvOLri_AVARCSwuuL8BUBEJLPDc8yREpaqphG_GnUZUVSZtLs7AUGzoZFWU8z2mJM0g&_nc_ohc=7kY2OioIjSgQ7kNvwEmO49q&_nc_oc=AdrtUhTVyAzRVLGy5npA9maMSFwpLe5qM1_RnVS6JvkygZSDzZRtrqghVxeStXO5aB8&_nc_zt=23&_nc_ht=scontent.fclo14-1.fna&_nc_gid=c_sswLUK7g1SUGm5Jon5-A&_nc_ss=7b2a8&oh=00_AQBOph0UkUROwIqcLg-lQpsfCYfAE4m1lS0zcJB_RpQDnQ&oe=6A6F0ED7"
+                            alt="limonada de coco">
+                        <span class="category-badge jugos-badge">Bebidas</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Limonada de Coco</h3>
+                        <div class="price-row">
+                            <span class="price">$8.500</span>
+                            <button class="btn-add"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nosotros Section -->
+        <section id="nosotros" class="about-section">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?auto=format&fit=crop&w=800&q=80"
+                        alt="Interior de la heladería">
+                </div>
+                <div class="about-content">
+                    <h2>Sobre Nosotros</h2>
+                    <div class="rainbow-divider-left"></div>
+                    <p class="history">Nacimos en el corazón de Tocaima con un sueño dulce: llevar alegría y frescura a
+                        cada familia. Desde nuestros inicios, nos hemos dedicado a crear los mejores helados y ensaladas
+                        de frutas utilizando ingredientes 100% naturales y de la más alta calidad.</p>
+
+                    <div class="mission-vision">
+                        <div class="mv-card">
+                            <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Misión</h3>
+                            <p>Brindar anuestros clientes productos frescos, saludables y de excelente
+                                calidad, ofreciendo una variedad de helados y frutas que satisfagan sus
+                                gustos, en un ambiente agradable, con atencion amable y precios justos que
+                                generen bienestar y confianza en la comunidad
+                            </p>
+                        </div>
+                        <div class="mv-card">
+                            <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+                            <h3>Visión</h3>
+                            <p>ser reconocidos como la heladeria y fruteria lider en nuestra region, destacandonos
+                                por la calidad de nuestros productos, la innovacion en sabores y la preferencia de
+                                nuestros clientes, contribuyendo a una alimentacion mas saludable y el crecimiento
+                                de nuestro negocio.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ubicación Section -->
+        <section id="ubicacion" class="contact-section">
+            <div class="section-header">
+                <h2>Encuéntranos</h2>
+                <div class="rainbow-divider"></div>
+                <p>¡Ven a disfrutar de nuestros sabores o haz tu pedido a domicilio!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>calle 4 #6-55, tocaima, colombia</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>313 4292831</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Lunes a Domingo: 11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color: #1877F2;"><i class="fa-brands fa-facebook"></i></div>
+                        <div>
+                            <h4>Facebook</h4>
+                            <p><a href="https://www.facebook.com/share/1Etc48D2zr/" target="_blank"
+                                    style="color: var(--color-pink-dark); font-weight: 600;">Heladería Arcoíris
+                                    Tocaima</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon" style="color: #E4405F;"><i class="fa-brands fa-instagram"></i></div>
+                        <div>
+                            <h4>Instagram</h4>
+                            <p><a href="https://www.instagram.com/fruteria_maya?igsh=MXVuamFrbHdyYm02dg%3D%3D"
+                                    target="_blank"
+                                    style="color: var(--color-pink-dark); font-weight: 600;">@heladeriaarcoiristocaima</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <a href="https://wa.me/573134292831" target="_blank" class="whatsapp-btn">
+                        <i class="fa-brands fa-whatsapp"></i> Pedir por WhatsApp
+                    </a>
+                </div>
+
+                <div class="map-container">
+                    <!-- Embed a placeholder map for Tocaima -->
+                    <iframe
+                        src="https://maps.google.com/maps?q=calle%204%20%236-55,%20tocaima,%20colombia&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Equipo de Trabajo Section -->
+        <section id="equipo-de-trabajo" class="team-section">
+            <div class="section-header">
+                <h2>Nuestro Equipo</h2>
+                <div class="rainbow-divider"></div>
+                <p>Las personas apasionadas que hacen posible cada sonrisa</p>
+            </div>
+
+            <div class="contenedor-equipo">
+                <div class="miembro">
+                    <img src="images/astrit.jpeg" height="150" width="150" alt="Astrit">
+                    <h3>ASTRIT BAUTISTA</h3>
+                    <p class="role">LÍDER DE EQUIPO / PROGRAMADORA</p>
+                </div>
+
+                <div class="miembro">
+                    <img src="images/daniela.jpeg" height="150" width="150" alt="Daniela">
+                    <h3>DANIELA DUARTE</h3>
+                    <p class="role">PRESENTADORA</p>
+                </div>
+
+                <div class="miembro">
+                    <img src="images/esteban.jpeg" height="150" width="150" alt="Esteban">
+                    <h3>ESTEBAN MIRANDA</h3>
+                    <p class="role">DISEÑADOR GRÁFICO</p>
+                </div>
+
+                <div class="miembro">
+                    <img src="images/nicolas.jpeg" height="150" width="150" alt="Nicolas">
+                    <h3>NICOLAS TRUJILLO</h3>
+                    <p class="role">DISEÑADOR UX</p>
+                </div>
+
+                <div class="miembro">
+                    <img src="images/wilbert.jpeg" height="150" width="150" alt="WILBERT">
+                    <h3>WILBERT</h3>
+                    <p class="role">TESTER</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-rainbow logo-icon"></i>
+                    <div class="logo-text">
+                        <h2>Arcoíris</h2>
+                    </div>
+                </div>
+                <p>Sabor, color y frescura en cada bocado.</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1Etc48D2zr/" target="_blank" aria-label="Facebook"><i
+                        class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/heladeriaarcoiristocaima" target="_blank" aria-label="Instagram"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/573134292831" target="_blank" aria-label="WhatsApp"><i
+                        class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Heladería y Frutería Arcoíris. Todos los derechos reservados. Diseñado en Tocaima.</p>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
